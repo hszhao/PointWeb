@@ -13,12 +13,13 @@ This repository is build for PointWeb in point cloud scene understanding.
 1. Requirement:
 
    - Hardware: 4 GPUs (better with >=11G GPU memory)
-   - Software: PyTorch>=1.0.0, Python3, [tensorboardX](https://github.com/lanpa/tensorboardX)
+   - Software: PyTorch>=1.0.0, Python3, CUDA 9.0 [tensorboardX](https://github.com/lanpa/tensorboardX)
 
-2. Clone the repository:
+2. Clone the repository and build the ops:
 
    ```shell
    git clone https://github.com/hszhao/PointWeb.git
+   cd lib/pointops && python setup.py install && cd ../../
    ```
 
 3. Train:
