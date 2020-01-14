@@ -24,7 +24,7 @@ This repository is build for PointWeb in point cloud scene understanding.
 
 3. Train:
 
-   - Download related datasets and modify the relevant paths specified in folder `config`.
+   - Download related [datasets](https://drive.google.com/open?id=1Jpi2IP58zHs6Ppv05kqvwJhBnl-Kge2q) and modify the relevant paths specified in folder `config`.
 
    - Specify the gpu used in config and then do training:
 

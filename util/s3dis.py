@@ -74,7 +74,7 @@ class S3DIS(Dataset):
 
 
 if __name__ == '__main__':
-    data_root = '/mnt/sda1/hszhao/dataset/s3dis/trainval_fullarea'
+    data_root = '/mnt/lustre/zhaohengshuang/dataset/s3dis/trainval_fullarea'
     num_point, test_area, block_size, sample_rate = 4096, 5, 1.0, 0.01
 
     point_data = S3DIS(split='train', data_root=data_root, num_point=num_point, test_area=test_area, block_size=block_size, sample_rate=sample_rate, transform=None)
