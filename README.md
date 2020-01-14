@@ -1,6 +1,6 @@
 # PointWeb: Enhancing Local Neighborhood Features for Point Cloud Processing
 
-by Hengshuang Zhao\*, Li Jiang*, Chi-Wing Fu, and Jiaya Jia, details are in [paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Zhao_PointWeb_Enhancing_Local_Neighborhood_Features_for_Point_Cloud_Processing_CVPR_2019_paper.pdft).
+by Hengshuang Zhao\*, Li Jiang*, Chi-Wing Fu, and Jiaya Jia, details are in [paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Zhao_PointWeb_Enhancing_Local_Neighborhood_Features_for_Point_Cloud_Processing_CVPR_2019_paper.pdf).
 
 ### Introduction
 

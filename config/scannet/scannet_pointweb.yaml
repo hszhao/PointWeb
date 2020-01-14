@@ -1,0 +1,42 @@
+DATA:
+  data_name: scannet
+  data_root: /mnt/lustre/zhaohengshuang/dataset/scannet
+  classes: 20
+  fea_dim: 3  # point feature dimension
+  block_size: 1.5
+  stride_rate: 0.5
+  sample_rate: 1.0
+  num_point: 8192  # point number [default: 8192]
+
+TRAIN:
+  arch: pointweb_seg
+  use_xyz: True
+  sync_bn: True  # adopt sync_bn or not
+  ignore_label: 255
+  train_gpu: [0, 1, 2, 3]
+  train_workers: 8  # data loader workers
+  train_batch_size: 16  # batch size for training
+  train_batch_size_val: 8  # batch size for validation during training, memory and speed tradeoff
+  base_lr: 0.05
+  epochs: 200
+  start_epoch: 0
+  step_epoch: 60
+  multiplier: 0.1
+  momentum: 0.9
+  weight_decay: 0.0001
+  manual_seed:
+  print_freq: 10
+  save_freq: 1
+  save_path: exp/scannet/pointweb/model
+  weight:  # path to initial weight (default: none)
+  resume:  # path to latest checkpoint (default: none)
+  evaluate: False  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+
+TEST:
+  split: test  # split in [train, val and test]
+  test_gpu: [0]
+  test_workers: 4
+  test_batch_size: 8
+  model_path: exp/scannet/pointweb/model/train_epoch_200.pth
+  save_folder: exp/scannet/pointweb/result/epoch_200/val_0.5  # results save folder
+  names_path: dataset/scannet/scannet_names.txt
