@@ -19,12 +19,18 @@ This repository is build for PointWeb in point cloud scene understanding.
 
    ```shell
    git clone https://github.com/hszhao/PointWeb.git
+   cd PointWeb
    cd lib/pointops && python setup.py install && cd ../../
    ```
 
 3. Train:
 
-   - Download related [datasets](https://drive.google.com/open?id=1Jpi2IP58zHs6Ppv05kqvwJhBnl-Kge2q) and modify the relevant paths specified in folder `config`.
+   - Download related [datasets](https://drive.google.com/open?id=1Jpi2IP58zHs6Ppv05kqvwJhBnl-Kge2q) and symlink the paths to them as follows (you can alternatively modify the relevant paths specified in folder `config`):
+
+     ```
+     mkdir -p dataset
+     ln -s /path_to_s3dis_dataset dataset/s3dis
+     ```
 
    - Specify the gpu used in config and then do training:
 

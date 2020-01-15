@@ -1,9 +1,9 @@
 DATA:
   data_name: s3dis
-  data_root: /mnt/lustre/zhaohengshuang/dataset/s3dis
-  train_list: /mnt/lustre/zhaohengshuang/dataset/s3dis/list/train12346.txt
-  train_full_folder: /mnt/lustre/zhaohengshuang/dataset/s3dis/trainval_fullarea
-  val_list: /mnt/lustre/zhaohengshuang/dataset/s3dis/list/val5.txt
+  data_root: dataset/s3dis
+  train_list: dataset/s3dis/list/train12346.txt
+  train_full_folder: dataset/s3dis/trainval_fullarea
+  val_list: dataset/s3dis/list/val5.txt
   test_area: 5
   classes: 13
   fea_dim: 6  # point feature dimension
@@ -37,12 +37,12 @@ TRAIN:
   evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
 
 TEST:
-  test_list: /mnt/lustre/zhaohengshuang/dataset/s3dis/list/val5.txt
-  test_list_full: /mnt/lustre/zhaohengshuang/dataset/s3dis/list/val5_full.txt
+  test_list: dataset/s3dis/list/val5.txt
+  test_list_full: dataset/s3dis/list/val5_full.txt
   split: val  # split in [train, val and test]
   test_gpu: [0]
   test_workers: 4
   test_batch_size: 8
   model_path: exp/s3dis/pointweb/model/train_epoch_100.pth
   save_folder: exp/s3dis/pointweb/result/epoch_100/val5_0.5  # results save folder
-  names_path: dataset/s3dis/s3dis_names.txt
+  names_path: data/s3dis/s3dis_names.txt

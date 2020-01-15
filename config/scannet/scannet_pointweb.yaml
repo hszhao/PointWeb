@@ -1,6 +1,6 @@
 DATA:
   data_name: scannet
-  data_root: /mnt/lustre/zhaohengshuang/dataset/scannet
+  data_root: dataset/scannet
   classes: 20
   fea_dim: 3  # point feature dimension
   block_size: 1.5
@@ -39,4 +39,4 @@ TEST:
   test_batch_size: 8
   model_path: exp/scannet/pointweb/model/train_epoch_200.pth
   save_folder: exp/scannet/pointweb/result/epoch_200/val_0.5  # results save folder
-  names_path: dataset/scannet/scannet_names.txt
+  names_path: data/scannet/scannet_names.txt
