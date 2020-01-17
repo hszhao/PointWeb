@@ -1,5 +1,4 @@
 #!/bin/sh
-#export LD_LIBRARY_PATH=/home/zhaohengshuang/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
 export PYTHONPATH=./
 
 PYTHON=python

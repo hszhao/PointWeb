@@ -78,8 +78,7 @@ def main():
     model = Model(c=args.fea_dim, k=args.classes, use_xyz=args.use_xyz)
     if args.sync_bn:
         from util.util import convert_to_syncbn
-        from lib.sync_bn import patch_replication_callback
-        convert_to_syncbn(model), patch_replication_callback(model)
+        convert_to_syncbn(model)
     criterion = nn.CrossEntropyLoss(ignore_index=args.ignore_label).cuda()
     optimizer = torch.optim.SGD(model.parameters(), lr=args.base_lr, momentum=args.momentum, weight_decay=args.weight_decay)
     scheduler = lr_scheduler.StepLR(optimizer, step_size=args.step_epoch, gamma=args.multiplier)
@@ -87,6 +86,9 @@ def main():
     logger.info("Classes: {}".format(args.classes))
     logger.info(model)
     model = torch.nn.DataParallel(model.cuda())
+    if args.sync_bn:
+        from lib.sync_bn import patch_replication_callback
+        patch_replication_callback(model)
     if args.weight:
         if os.path.isfile(args.weight):
             logger.info("=> loading weight '{}'".format(args.weight))
